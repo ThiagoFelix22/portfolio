@@ -1,16 +1,54 @@
-# React + Vite
+# Portfólio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Meu portfólio pessoal de desenvolvedor front-end, com apresentação, habilidades e contato.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Sobre o projeto
 
-## React Compiler
+Site de uma página que me apresenta para recrutadores e clientes. Foi feito com componentes React separados por seção, e cada seção tem o seu próprio CSS.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Seções
 
-## Expanding the ESLint configuration
+- **Início:** apresentação e botões para ver projetos e entrar em contato
+- **Sobre mim:** resumo da minha trajetória
+- **Habilidades:** tecnologias que utilizo
+- **Contato:** formas de falar comigo
+- **Navbar e rodapé:** navegação entre as seções
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tecnologias
+
+React 19, Vite, JavaScript e TypeScript, HTML e CSS.
+
+## Como rodar localmente
+
+Pré-requisito: [Node.js](https://nodejs.org/) 20+.
+
+```bash
+git clone https://github.com/ThiagoFelix22/portfolio.git
+cd portfolio
+npm install
+npm run dev
+```
+
+Abra o endereço que o Vite mostrar no terminal (normalmente `http://localhost:5173`).
+
+## Estrutura
+
+```
+src/
+└── components/
+    ├── Navbar/
+    ├── Hero/
+    ├── About/
+    ├── Skills/
+    ├── Contact/
+    └── Footer/
+```
+
+## Autor
+
+**Thiago Felix** · [GitHub](https://github.com/ThiagoFelix22)
