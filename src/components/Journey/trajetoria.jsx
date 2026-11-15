@@ -1,20 +1,13 @@
 import { GraduationCap, Briefcase, Award, FileText } from 'lucide-react'
 import './trajetoria.css'
 
-// TODO: trocar pelos seus cursos, faculdade, certificados e experiências reais
 // type: 'curso' | 'trabalho' | 'certificado' (só muda o ícone)
 // description e certificate são opcionais.
 // certificate: PDF em public/certificados/ (ex.: '/certificados/react.pdf') vira o botão "Ver certificado".
 const items = [
   {
-    type: 'curso',
-    period: '2024 - começo',
-    title: 'Nome do curso ou faculdade',
-    place: 'Rocketseat',
-  },
-  {
     type: 'certificado',
-    period: '2026',
+    period: '2024 - 2026',
     title: 'Curso de Extensão em React (35h)',
     place: 'Faculdade de Tecnologia Rocketseat',
     description:
