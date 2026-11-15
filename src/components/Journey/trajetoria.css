@@ -91,6 +91,27 @@
   margin-bottom: 8px;
 }
 
+.timeline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 6px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: var(--glow-sm);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-link:hover {
+  background: var(--accent-soft);
+  box-shadow: 0 0 18px rgba(0, 217, 255, 0.35);
+}
+
 @media (max-width: 480px) {
   .journey-section {
     padding: 60px 16px;

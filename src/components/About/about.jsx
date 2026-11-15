@@ -3,7 +3,7 @@ import './about.css'
 // TODO: confirmar se estes números são reais; se não forem, troque por fatos verificáveis
 const stats = [
   { number: '2+', label: 'Anos estudando programação' },
-  { number: '10+', label: 'Clientes atendidos' },
+  { number: '25+', label: 'Repositórios no GitHub' },
   { number: '15+', label: 'Projetos concluídos' },
 ]
 
