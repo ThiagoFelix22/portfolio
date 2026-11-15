@@ -1,20 +1,66 @@
+/* Cores e fonte do site inteiro: mude aqui para mudar em todo lugar */
+:root {
+  --bg: #16213e;
+  --bg-alt: #1a1a2e;
+  --surface: rgba(30, 41, 59, 0.5);
+  --border: rgba(71, 85, 105, 0.4);
+  --accent: #00d9ff;
+  --accent-2: #3b82f6;
+  --accent-soft: rgba(0, 217, 255, 0.1);
+  --accent-glow: rgba(0, 217, 255, 0.2);
+  /* Sombras: profundidade normal e brilho azul no hover */
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 217, 255, 0.04);
+  --shadow-hover: 0 18px 40px rgba(0, 0, 0, 0.45), 0 0 28px rgba(0, 217, 255, 0.25);
+  --glow-sm: 0 0 12px rgba(0, 217, 255, 0.18);
+  --glow-text: 0 0 24px rgba(0, 217, 255, 0.35);
+  --text: #eaeaea;
+  --text-muted: #cbd5e1;
+  --font: 'Inter', Arial, Helvetica, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #16213e;
+  background-color: var(--bg);
   min-height: 100vh;
   overflow-x: hidden;
 }
 
+/* Compensa a navbar fixa ao pular para uma seção */
+section {
+  scroll-margin-top: 70px;
+}
+
+/* Título padrão das seções */
+main h2 {
+  text-shadow: var(--glow-text);
+  font-size: clamp(32px, 6vw, 44px);
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 800;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 .btn {
-  background: linear-gradient(135deg, #16f4d0 0%, #3b82f6 100%);
+  box-shadow: 0 6px 18px rgba(0, 217, 255, 0.25);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
   padding: 14px 25px;
-  border-radius: 5px;
+  border-radius: 8px;
   border: none;
   color: #fff;
   font-weight: bold;
@@ -22,60 +68,119 @@ body {
   cursor: pointer;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(22, 244, 208, 0.4);
+  box-shadow: 0 10px 26px rgba(0, 217, 255, 0.45);
 }
 
 .contact {
+  box-shadow: var(--glow-sm), inset 0 0 12px rgba(0, 217, 255, 0.08);
   background: transparent;
-  border: 2px solid #16f4d0;
-  color: #16f4d0;
+  border: 2px solid var(--accent);
+  color: var(--accent);
   border-radius: 8px;
   padding: 14px 25px;
   cursor: pointer;
   font-size: 15px;
   font-weight: bold;
+  text-decoration: none;
   transition: all 0.3s ease;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .contact:hover {
-  background: rgba(22, 244, 208, 0.1);
+  box-shadow: 0 0 22px rgba(0, 217, 255, 0.35), inset 0 0 14px rgba(0, 217, 255, 0.15);
+  background: var(--accent-soft);
   transform: translateY(-3px);
 }
 
-/* ========== RESPONSIVO - TABLETS ========== */
-@media (max-width: 768px) {
+.btn:active,
+.contact:active {
+  transform: scale(0.98);
+}
 
-  .btn,
-  .contact {
-    display: block;
-    width: 100%;
-    margin-bottom: 15px;
-  }
+/* Texto com degradê */
+.gradient-text {
+  filter: drop-shadow(0 0 18px rgba(0, 217, 255, 0.3));
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-  .contact {
-    width: 100%;
-    padding: 14px 20px;
-    text-align: center;
+/* Contorno visível para quem navega pelo teclado */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Animação de entrada ao rolar (a classe "visible" é colocada pelo App.jsx) */
+/* Usa animation (e não transition) para não brigar com o hover dos cards */
+.reveal {
+  opacity: 0;
+}
+
+.reveal.visible {
+  opacity: 1;
+  animation: reveal-in 0.7s ease;
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
 }
 
-/* ========== RESPONSIVO - MOBILE ========== */
-@media (max-width: 480px) {
+/* Botão de voltar ao topo */
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 900;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
-  .btn,
-  .contact {
-    font-size: 14px;
-    padding: 13px 20px;
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
 
-  .btn:active,
-  .contact:active {
-    transform: scale(0.98);
+  .reveal {
+    opacity: 1;
   }
 }

@@ -1,83 +1,45 @@
+import { BookOpen, Code, Wrench } from 'lucide-react'
 import './skill.css'
-function Skill() {
 
+// Baseado nos projetos do GitHub. Deixe só o que você consegue explicar numa entrevista.
+const groups = [
+  {
+    title: 'Front-End',
+    icon: Code,
+    items: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'React Router', 'Tailwind CSS', 'Context API', 'Zustand', 'Design Responsivo'],
+  },
+  { title: 'Ferramentas', icon: Wrench, items: ['Git', 'GitHub', 'Vite', 'VS Code', 'APIs REST'] },
+  // Já teve contato em projetos, mas ainda está aprofundando
+  { title: 'Estudando', icon: BookOpen, items: ['Node.js', 'Express', 'NestJS', 'Prisma', 'PostgreSQL'] },
+]
+
+function Skills() {
   return (
-
-    <section className="skill-section">
+    <section id="habilidades" className="skill-section">
       <div className="skill-container">
-        <h1>Minhas Habilidades</h1>
+        <h2 className="reveal">Habilidades</h2>
 
         <div className="skills-grid">
-          {/* Card 1 - React */}
-          <div className="skill-card">
-            <div className="skill-header">
-              <span className="skill-name">React</span>
-              <span className="skill-percentage">90%</span>
+          {groups.map(({ title, icon, items }) => {
+            const Icon = icon
+            return (
+            <div className="skill-card reveal" key={title}>
+              <div className="skill-header">
+                <Icon className="skill-icon" aria-hidden="true" />
+                <h3 className="skill-name">{title}</h3>
+              </div>
+              <ul className="skill-tags">
+                {items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
-            <div className="skill-bar-background">
-              <div className="skill-bar-fill skill-90"></div>
-            </div>
-          </div>
-
-          {/* Card 2 - JavaScript */}
-          <div className="skill-card">
-            <div className="skill-header">
-              <span className="skill-name">JavaScript</span>
-              <span className="skill-percentage">85%</span>
-            </div>
-            <div className="skill-bar-background">
-              <div className="skill-bar-fill skill-85"></div>
-            </div>
-          </div>
-
-          {/* Card 3 - CSS/HTML */}
-          <div className="skill-card">
-            <div className="skill-header">
-              <span className="skill-name">CSS/HTML</span>
-              <span className="skill-percentage">88%</span>
-            </div>
-            <div className="skill-bar-background">
-              <div className="skill-bar-fill skill-88"></div>
-            </div>
-          </div>
-
-          {/* Card 4 - Node.js */}
-          <div className="skill-card">
-            <div className="skill-header">
-              <span className="skill-name">Node.js</span>
-              <span className="skill-percentage">75%</span>
-            </div>
-            <div className="skill-bar-background">
-              <div className="skill-bar-fill skill-75"></div>
-            </div>
-          </div>
-
-          {/* Card 5 - Git */}
-          <div className="skill-card">
-            <div className="skill-header">
-              <span className="skill-name">Git</span>
-              <span className="skill-percentage">80%</span>
-            </div>
-            <div className="skill-bar-background">
-              <div className="skill-bar-fill skill-80"></div>
-            </div>
-          </div>
-
-          {/* Card 6 - Responsive Design */}
-          <div className="skill-card">
-            <div className="skill-header">
-              <span className="skill-name">Responsive Design</span>
-              <span className="skill-percentage">92%</span>
-            </div>
-            <div className="skill-bar-background">
-              <div className="skill-bar-fill skill-92"></div>
-            </div>
-          </div>
+            )
+          })}
         </div>
       </div>
     </section>
   )
 }
 
-
-export default Skill
+export default Skills

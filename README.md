@@ -13,15 +13,19 @@ Site de uma página que me apresenta para recrutadores e clientes. Foi feito com
 
 ## Seções
 
-- **Início:** apresentação e botões para ver projetos e entrar em contato
-- **Sobre mim:** resumo da minha trajetória
-- **Habilidades:** tecnologias que utilizo
-- **Contato:** formas de falar comigo
-- **Navbar e rodapé:** navegação entre as seções
+- **Início:** apresentação com efeito de digitação, botões e redes sociais
+- **Sobre mim:** quem sou e o que busco
+- **Habilidades:** tecnologias agrupadas por categoria
+- **Trajetória:** linha do tempo com formação, cursos e experiências
+- **Projetos:** cards com imagem, tecnologias e links de demo e código
+- **Contato:** e-mail, LinkedIn e GitHub
+- **Navbar fixa:** destaca a seção atual enquanto você rola a página
+
+Extras: animações de entrada ao rolar, botão de voltar ao topo, layout responsivo e respeito à preferência de "reduzir movimento" do sistema.
 
 ## Tecnologias
 
-React 19, Vite, JavaScript e TypeScript, HTML e CSS.
+React 19, Vite, JavaScript, HTML, CSS e ícones do [Lucide](https://lucide.dev/).
 
 ## Como rodar localmente
 
@@ -40,14 +44,21 @@ Abra o endereço que o Vite mostrar no terminal (normalmente `http://localhost:5
 
 ```
 src/
+├── data/
+│   └── perfil.js      # e-mail, LinkedIn, GitHub, currículo e cargos
 └── components/
     ├── Navbar/
     ├── Hero/
     ├── About/
     ├── Skills/
+    ├── Journey/       # Trajetória
+    ├── Projects/
     ├── Contact/
-    └── Footer/
+    ├── Footer/
+    └── BackToTop/
 ```
+
+As cores e a fonte do site ficam nas variáveis do início de `src/App.css`.
 
 ## Autor
 
